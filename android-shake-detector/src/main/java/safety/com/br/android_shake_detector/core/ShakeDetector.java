@@ -7,6 +7,9 @@ import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.util.Log;
 
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+
 import java.util.List;
 
 /**
@@ -94,7 +97,12 @@ public class ShakeDetector {
         IntentFilter filter = new IntentFilter();
         filter.addAction("shake.detector");
         filter.addAction("private.shake.detector");
-        context.registerReceiver(this.shakeBroadCastReceiver, filter);
+
+        ContextCompat.registerReceiver(context,
+                this.shakeBroadCastReceiver,
+                filter,
+                ContextCompat.RECEIVER_EXPORTED
+        );
     }
 
     public Boolean isRunning() {

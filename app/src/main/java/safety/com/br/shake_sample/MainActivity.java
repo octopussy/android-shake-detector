@@ -28,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
         ShakeOptions options = new ShakeOptions()
                 .background(false)
                 .interval(1000)
-                .shakeCount(2)
-                .sensibility(2.0f);
+                .shakeCount(1)
+                .sensibility(5.0f);
 
         this.shakeDetector = new ShakeDetector(options).start(this, new ShakeCallback() {
             @Override

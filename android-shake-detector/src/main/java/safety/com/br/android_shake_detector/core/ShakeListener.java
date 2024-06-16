@@ -66,7 +66,7 @@ public class ShakeListener implements SensorEventListener {
 
         if (gForce > this.shakeOptions.getSensibility()) {
 
-            Log.d("LISTENER", "force: " + gForce + " count: " + mShakeCount);
+            //Log.d("LISTENER", "force: " + gForce + " count: " + mShakeCount);
 
             final long now = System.currentTimeMillis();
 
